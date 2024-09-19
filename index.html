@@ -25,7 +25,7 @@
 
 
   <title>SYNERGAI</title>
-  <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
+  <link rel="icon" type="image/x-icon" href="static/images/icon.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -183,67 +183,233 @@
       </div>
     </div>
   </div>
-<!-- </section> -->
-<!-- End paper abstract -->
-<section class="section hero">
-    <div container>
-        <div class="container  is-max-desktop">
-            <h2 class="title is-size-2 has-text-centered">Approach</h2>
-            <div id="results-carousel" class="carousel results-carousel">
-                <div class="item">
-                    <img src="static/images/teaserv2.jpg" alt="MY ALT TEXT"/>
-                    <h2 class="is-size-5 subtitle ">
-                    <b></br>1. An overview of SYNERGAI.</b> By representing 3D scenes as 3DSGs, SYNERGAI can perform zero-shot 3D reasoning and human-robot alignment. In particular, we introduce mouse clicking to facilitate object reference in the presence of errourneous perception.
-                    </h2>
-                </div>
-                <div class="item">
-                    <img src="static/images/agent_design.png" alt="MY ALT TEXT"/>
-                    <h2 class="is-size-5 subtitle">
-                        <b></br>2. The design of SYNERGAI and an example interaction.</b> SYNERGAI takes text inputs from a user and progressively collect information from the 3DSG to generate responses, during which it operates a 3DSG through a set of APIs called <em>tools</em>. As shown in the example interaction, it generates a plan first and resolves the user input step-by-step. In this example, the system incorrectly recognizes the object of interest as a book, which indicates perception misalignment.
-                    </h2>
-                </div> 
-                <div class="item">
-                    <img src="static/images/tools.jpg" alt="MY ALT TEXT"/>
-                    <h2 class="is-size-5 subtitle">
-                    </br><b>3. The set of tools developed for SYNERGAI.</b> Theses tools support accessing objects and relations (the top five) and modifying information in 3DSGs as requested (the following four). The last two tools are for generating responses to the user.
-                    </h2>
-                </div> 
-            </div>
+
+<section class="section" >
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-2"> Overview </h2>
+        <div class="is-size-5 content has-text-justified">
+          <p>
+            Leveraging 3DSG as its representation, SYNERGAI decomposes complex tasks with LLMs and takes actions with our designed 
+            tools in intermediate steps. It interacts with humans through natural language and non-verbal mouse clicking to
+            enhance object references, capable of facilitating human-robot collaboration and perceptual alignment by automatically 
+            modifying the data stored in 3DSG.
+          </p>
         </div>
-        <!-- </div><hr class="solid"> -->
+        <div style="width: 100%;"></div>
+          <video poster="" id="scene_representation" autoplay muted loop height="100%">
+            <source src="static/videos/teaser_gif.mp4" type="video/mp4">
+          </video>
+        </div>
+        <!-- <img id="painting_icon" width="80%" src="static/images/overview.png"> -->
+      </div>
     </div>
 </section>
 
-<section class="section hero">
-    <div container>
-        <div class="container  is-max-desktop">
-            <h2 class="title is-size-2 has-text-centered">Evaluation</h2>
-            <div id="results-carousel" class="carousel results-carousel">
-                <div class="item">
-                    <img src="static/images/3d_reasoning_qualitative.jpg" alt="MY ALT TEXT"/>
-                    <h2 class="is-size-5 subtitle">
-                    </br> <b>1. Qualitative results for 3D reasoning tasks.</b> SYNERGAI can solve multiple 3D reasoning tasks with a unified design.
-                    </h2>
-                </div>
-                <div class="item">
-                    <img src="static/images/alignment_task_example.jpg" alt="MY ALT TEXT"/>
+<!-- <section class="section" > -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-2"> System Design</h2>
+        <div class="is-size-5 content has-text-justified">
+          <p>
+            SYNERGAI represents 3D scene with 3DSGs and leverages LLMs to respond to user inputs. It is first prompted to generate 
+            a <b><i>plan</i></b>, which effectively decomposes the input task into sub-tasks to be solved in a sequential process. At each step, 
+            SYNERGAI selects a <b><i>tool</i></b> as its <b><i>action</i></b> based on the <b><i>observation</i></b>, which contains the results of the previous actions. In 
+            this example, the system identifies the correct object of relationship “on the blue box”, but incorrectly recognizes it 
+            as a book, where <b><i>perception misalignment</i></b> happens.
+          </p>
+        </div>
+        <img id="painting_icon" width="100%" src="static/images/design.png">
+      </div>
+    </div>
+<!-- </section> -->
+
+<!-- <section class="section" > -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column">
+        <h2 class="title is-2"> Tool Design</h2>
+        <div class="is-size-5 content has-text-justified">
+          <p>
+            The tools developed for SYNERGAI support accessing relevant information (the top five) from 3DSG, modifying its data (the 
+            following four) and generating responses to the user (the last two).
+          </p>
+        </div>
+        <img id="painting_icon" width="100%" src="static/images/tools.jpg">
+    </div>
+  </div>
+<!-- </section> -->
+
+<!-- <section class="section hero"> -->
+  </br>
+  <div class="container is-max-desktop">
+      <h2 class="title is-size-2 has-text-centered">Human-Robot Collaboration</h2>
+        <div class="is-size-5 content has-text-justified">
+          We demonstrate SYNERGAI’s capability in high-level human-robot collaboration with its zero-shot
+          3D reasoning task performance, including object captioning, scene captioning, question-answering and task planning. 
+          We quantitatively show that it reaches comparable performance to the data-driven methods on ScanQA benchmark in a zero-shot manner.
+        </div>
+      <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+              <img src="static/images/3d_reasoning_qualitative.jpg" alt="MY ALT TEXT"/>
+              <h2 class="is-size-5 subtitle has-text-centered">
+              <b>Qualitative results for various 3D reasoning tasks.</b>
+              </h2>
+          </div>
+          <div class="item">
+              <img src="static/images/scanqa.png" alt="MY ALT TEXT"/>
+              <h2 class="is-size-5 subtitle has-text-centered">
+              <b> Zero-Shot testing on ScanQA Datasets.</b>
+              </h2>
+          </div> 
+      </div>
+  </div>
+<!-- </section> -->
+
+<!-- <section class="section hero"> -->
+</br>
+<div class="container is-max-desktop">
+    <h2 class="title is-size-2 has-text-centered">Human-Robot Alignment</h2>
+      <div class="is-size-5 content has-text-justified">
+        We systematically assess SYNERGAI’s capability in achieving perceptual alignment with humans spanning 10 real-world scenes sourced from the ScanNet dataset.
+        The tests include two phases, i.e., alignment tasks and knowledge transfer. 
+      </div>
+    <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+            <img src="static/images/alignment.png" alt="MY ALT TEXT"/>
+            <h2 class="is-size-5 subtitle has-text-centered">
+            <b>Quantitative results of human-robot alignment.</b> “SR” denotes the success rate, “RR”
+              for the rate of reasonable responses and “QR” for the query ratio of the 3DSG. Our system can
+              establish common ground with humans, realizing a success rate of 61.9% in alignment tasks.
+            </h2>
+        </div>
+        <div class="item">
+            <img src="static/images/alignment_ablation.png" alt="MY ALT TEXT"/>
+            <h2 class="is-size-5 subtitle has-text-centered">
+            <b> Statistics of alignment experiments.</b>
+            </h2>
+        </div> 
+        <div class="item">
+          <img src="static/images/alignment_transfer.png" alt="MY ALT TEXT"/>
+          <h2 class="is-size-5 subtitle has-text-centered">
+          <b> Knowledge Transfer to Novel Tasks, reported in Success Rate (%) as measured by LLM.</b>This shows capability to
+          transfer the acquired knowledge during alignment to novel tasks.
+          </h2>
+        </div> 
+    </div>
+</div>
+<!-- </section> -->
+
+<!-- <section class="section hero"> -->
+</br>
+<div class="container is-max-desktop">
+    <h2 class="title is-size-2 has-text-centered">Alignment Tasks and Examples</h2>
+      <!-- <div class="is-size-5 content has-text-justified">
+        We systematically assess SYNERGAI’s capability in achieving perceptual alignment with humans spanning 10 real-world scenes sourced from the ScanNet dataset.
+        The tests include two phases, i.e., alignment tasks and knowledge transfer. 
+      </div> -->
+    <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+            <img src="static/images/alignment_example.png" alt="MY ALT TEXT"/>
+            <h2 class="is-size-5 subtitle has-text-centered">
+            <b>Examples of EASY and HARD alignment tasks.</b> We devise 42 tasks to assess the human-robot alignment, which are related to perceptual concepts in form of question-answering.
+            </h2>
+        </div>
+        <div class="item">
+            <img src="static/images/Screenshot.png" alt="MY ALT TEXT"/>
+            <h2 class="is-size-5 subtitle has-text-centered">
+            <b> A screenshot for our interface. </b> The left part consists of the reconstructed 3D scene, the local 3DSG for the object of interest (bottom left), and object segmentation (bottom middle). 
+            The user can chat with our system and also select an object by clicking it in the reconstruction panel or the 3DSG. In this example, the user marks the door.
+            </h2>
+        </div> 
+        <div class="item">
+          <img src="static/images/Full_list_1.png" alt="MY ALT TEXT"/>
+          <h2 class="is-size-5 subtitle has-text-centered">
+          <b> Full list of alignment tasks designed for the ScanNet dataset, Part 1/2.</b>
+          </h2>
+        </div> 
+        <div class="item">
+          <img src="static/images/Full_list_2.png" alt="MY ALT TEXT"/>
+          <h2 class="is-size-5 subtitle has-text-centered">
+          <b> Full list of alignment tasks designed for the ScanNet dataset, Part 2/2.</b>
+          </h2>
+        </div> 
+    </div>
+</div>
+<!-- </section> -->
+
+<!-- <section class="section hero"> -->
+</br>
+<div class="container is-max-desktop">
+    <h2 class="title is-size-2 has-text-centered">Scene Reconstruction and 3DSG</h2>
+      <div class="is-size-5 content has-text-justified">
+        From a sequence of posed RGBD images, the 3D mesh of a scene can be reconstructed through either depth fusion and marching cubes algorithm,  or point accumulation from the 
+        depth image like ConceptGraphs or via neural rendering with state-of-the-art methods like MonoSDF. We construct a 3D Scene Graph (3DSG)as its data structure, which encapsulates 
+        hierarchical topology and key information necessary for 3D reasoning.
+      </div>
+    <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <div style="text-align: center;">
+            <img src="static/images/reconstruction.png" width="85%" alt="MY ALT TEXT"/>
+          </div>
+            <h2 class="is-size-5 subtitle has-text-centered">
+            <b>Qualitative results of 3D reconstruction and segmentation.</b> The figure shows that different methods reveal limitations and failures in both reconstruction or segmentation.
+            </h2>
+        </div>
+        <div class="item">
+          <div style="text-align: center;">
+            <img src="static/images/sg_relation.png" width="85%" alt="MY ALT TEXT"/>
+          </div>
+            <h2 class="is-size-5 subtitle has-text-centered">
+            <b> Relationships captured in 3DSG.</b> The 3DSG is defined as a hierarchical graph, where each node represents one 3D object and the edges 
+            represent spatial relationships between nodes. We instantiate the nodes with the instance segmentation and traverse all the nodes to determine their 
+            spatial relationships. The object’s visual and physical properties are obtained through BLIP2 to generate information about the object color, shape, material and affordance, etc
+            </h2>
+        </div> 
+    </div>
+</div>
+<!-- </section> -->
+
+<!-- <section class="section"> -->
+  </br>
+  <div class="container is-max-desktop">
+      <h2 class="title is-size-2 has-text-centered">Prompts and Doc-strings</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+          <div class="item">
+              <img src="static/images/prompt1.png" alt="MY ALT TEXT"/>
+          </br>
+              <img src="static/images/prompt2.png" alt="MY ALT TEXT"/>
+              <h2 class="is-size-5 subtitle has-text-centered">
+              <b>The major system prompts in SYNERGAI.</b>
+              </h2>
+          </div>
+          <div class="item">
+              <img src="static/images/docstring.png" width="100%" alt="MY ALT TEXT"/>
+              <h2 class="is-size-5 subtitle has-text-centered">
+              <b>Example doc-strings for the tool functions.</b>
+              </h2>
+          </div>
+      </div>
+  </div>
+<!-- </section> -->
+
+                <!-- <div class="item">
+                    <img src="static/images/scanqa.png" alt="MY ALT TEXT"/>
                     <h2 class="is-size-5 subtitle">
                     </br> <b>2. Examples of EASY and HARD alignment tasks.</b> We device 42 tasks to assess SYNERGAI's capability for human-robot alignment. The questions in the tasks are challenging in the presence of perception errors but can be resolved after human-robot alignment. In specific, in the right example the user notices from the system response that both the hanger and the
                     ironing board have incorrect labels. Thus the user checks and corrects the label of the ironing board
                     by clicking (the 2nd and 3rd user inputs). Then the user checks the items to the left of the ironing
                     board (the 4th input) and corrects the label of the hanger (the 5th and 6th inputs).
                     </h2>
-                </div> 
-                <div class="item">
+                </div>  -->
+                <!-- <div class="item">
                     <img src="static/images/alignment_quantitative.jpg" alt="MY ALT TEXT"/>
                     <h2 class="is-size-5 subtitle">
                     </br><b>3. Quantitative results for human-robot alignment experiments.</b> In our experiment, 10 human subjects are recruited to interact with our system and correct perception errors so that the system can answer the questions in the alignment tasks. Our results show that the users are quite satified with the system's responses (Interaction SR=64.87%), and the answer accuracy is improved from 4.76% to 61.9% after alignment. 
                     </h2>
-                </div> 
-            </div>
-        </div>
-    </div>
-</section>
+                </div>  -->
 
 
 <!-- Youtube video -->
