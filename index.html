@@ -9,7 +9,7 @@
   <meta property="og:description" content="An LLM-based system that addresses perceptual misalignment with human-robot alignment in real-time."/>
   <meta property="og:url" content="https://synerg-ai.github.io"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
-  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image" content="static/image/icon.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
 
@@ -48,56 +48,52 @@
 
 
 <section class="hero">
-    <div class="hero-body">
-        <div class="container is-max-desktop">
-            <div class="columns is-centered">
-                <div class="column has-text-centered">
-                    <h1 class="title is-size-1 publication-title">SYNERGAI: A Unified System for Zero-shot 3D Reasoning and Human-Robot Alignment</h1>
-                    <div class="is-size-4 publication-authors">
-                        <span class="author-block">
-                            <a href="https://yixchen.github.io" target="_blank">Yixin Chen</a><sup>*</sup>,
-                        </span>
-                        
-                        <span class="author-block">
-                            <a href="https://guoxizhang.com" target="_blank">Guoxi Zhang</a><sup>*</sup>,
-                        </span>
-                  
-                        <span class="author-block">
-                            Yaowei Zhang<sup>*</sup>,
-                        </span>
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <img src="static/images/icon.png" style="width: 250px; height: auto;">
+          <h1 class="title is-size-1 publication-title">SYNERGAI: Perception Alignment for Human-Robot Collaboration</h1>
 
-                        <span class="author-block">
-                            <a href="https://sbx126.github.io" target="_blank">Hongming Xu</a><sup>*</sup>,
-                        </span>
-                 
-                        <span class="author-block">Peiyuan Zhi,</span>
-                  
-                        <span class="author-block">
-                            <a href="https://liqing.io" target="_blank">Qing Li</a><sup>&#x1f4e7;</sup>,
-                        </span>
+          <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                  <a href="https://yixchen.github.io" target="_blank">Yixin Chen</a><sup>*</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://guoxizhang.com" target="_blank">Guoxi Zhang</a><sup>*</sup>,
+              </span>
+              <span class="author-block">
+                  Yaowei Zhang<sup>*</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://sbx126.github.io" target="_blank">Hongming Xu</a><sup>*</sup>,
+              </span>
+              <span class="author-block">Peiyuan Zhi,</span>
+              <span class="author-block">
+                  <a href="https://liqing.io" target="_blank">Qing Li</a><sup>&#x1f4e7;</sup>,
+              </span>
+              <span class="author-block">
+                  <a href="https://siyuanhuang.com" target="_blank">Siyuan Huang</a><sup>&#x1f4e7;</sup>
+              </span>
+          </div>
 
-                        <span class="author-block">
-                            <a href="https://siyuanhuang.com" target="_blank">Siyuan Huang</a><sup>&#x1f4e7;</sup>
-                        </span>
-                    </div>
+          <div class="is-size-5 publication-authors">
+              <span class="author-block">Beijing Institute for General Artificial Intelligence (BIGAI)</span>
+              <span class="is-size-5 eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+          </div>
 
-                    <div class="is-size-4 publication-authors">
-                        <span class="author-block">Beijing Institute for General Artificial Intelligence (BIGAI)<br>Preprint</span>
-                        <span class="is-size-5 eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                    </div>
-                </span>
-                <span class="link-block">
+                <!-- <span class="link-block">
                     <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
                     <span>arXiv</span>
-                  </a>
-            </div>
+                  </a> -->
         </div>
-        <hr class="solid">
+      </div>
     </div>
+  </div>
 </section>
                   <!-- <div class="column has-text-centered"> -->
                     <!-- <div class="publication-links"> -->
@@ -139,13 +135,11 @@
             <!-- </div> -->
           
 
-
-
 <!-- Teaser video-->
 <section class="hero teaser">
   <div class="container is-max-desktop has-text-centered">
     <div class="hero-body">
-        <span class="is-size-5 eql-cntrb"> <b>TL;DR:</b> We introduce SYNERGAI, a LLM-based system that can align and collaborate on 3D reasoning tasks with humans in a zero-shot manner.</span>
+        <span class="is-size-5 eql-cntrb"> <b>TL;DR:</b> We introduce SYNERGAI, a LLM-based system that can align percepturally and collaborate with humans on 3D reasoning tasks in a zero-shot manner.</span>
         </br>
       <iframe height="486" width="864" src="https://www.youtube.com/embed/Eol_8tWI9ac"></iframe>
     </div>
@@ -154,27 +148,42 @@
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
-<section class="section hero">
-    <div class="container  is-max-desktop">
-        <div class="hero-body">
-            <div class="columns is-centered has-text-centered">
-                <div class="column is-max-desktop">
-                    <h2 class="title is-size-2">Abstract</h2>
-                    <div class="is-size-5 content has-text-justified">
-                        <p>
-                            Recently, large language models (LLM)s have shown promise in robotics, offering powerful capabilities from task planning to commonsense reasoning. <b>However, existing LLM-based robotic systems often overlook the misalignment between human and robot perceptions, hindering their deployment in real-world scenarios.</b> To address this issue, we introduce SYNERGAI, a unified system designed to achieve zero-shot 3D reasoning and human-robot alignment. SYNERGAI reconstructs 3D scenes and generates 3D Scene Graphs (3DSG)s as its innate representation. It leverages LLMs to break down complex 3D reasoning tasks into intermediate steps and allocate appropriate tools for completing these steps. 
-                            Importantly, SYNERGAI incorporates an alignment mechanism allowing users to correct perceptual misalignment with the robot in real-time.
-                            All functionalities of SYNERGAI are seamlessly integrated into a user-friendly graphical interface, enabling intuitive interactions such as dragging, zooming, object marking, and natural-language instructions. 
-                            In a zero-shot manner, SYNERGAI achieves comparable performance with the state-of-the-art models in ScanQA.
-                            Additionally, a comprehensive user study confirms its effectiveness in establishing common ground with humans, significantly improving answer accuracy from 4.76% to 61.9%, with a high user satisfaction ratio of 64.87%.
-                            In conclusion, SYNERGAI offers a powerful, versatile, and agile solution for human-robot collaboration, poised to advance the deployment of robot assistants in real-world scenarios.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        <!-- </div><hr class="solid"> -->
+<!-- <section class="section"> -->
+  <div class="container is-max-desktop">
+        <!-- <div class="hero-body"> -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-max-desktop">
+        <h2 class="title is-size-2">Abstract</h2>
+          <div class="is-size-5 content has-text-justified">
+            <p>
+              Recently, large language models (LLMs) have
+              shown strong potential in facilitating human-robotic interaction
+              and collaboration. However, existing LLM-based systems often
+              overlook the misalignment between human and robot perceptions, which 
+              hinders their effective communication and real-
+              world robot deployment. To address this issue, we introduce
+              SYNERGAI, a unified system designed to achieve both perceptual 
+              alignment and human-robot collaboration. At its core,
+              SYNERGAI employs 3D Scene Graph (3DSG) as its explicit and
+              innate representation. This enables the system to leverage LLM
+              to break down complex tasks and allocate appropriate tools
+              in intermediate steps to extract relevant information from the
+              3DSG, modify its structure, or generate responses. Importantly,
+              SYNERGAI incorporates an automatic mechanism that enables
+              perceptual misalignment correction with users by updating its
+              3DSG with online interaction. SYNERGAI achieves comparable
+              performance with the data-driven models in ScanQA in a zero-
+              shot manner. Through comprehensive experiments across 10
+              real-world scenes, SYNERGAI demonstrates its effectiveness in
+              establishing common ground with humans, realizing a success
+              rate of 61.9% in alignment tasks. It also significantly improves
+              the success rate from 3.7% to 45.68% on novel tasks by
+              transferring the knowledge acquired during alignment.
+            </p>
+      </div>
     </div>
-</section>
+  </div>
+<!-- </section> -->
 <!-- End paper abstract -->
 <section class="section hero">
     <div container>
@@ -309,12 +318,12 @@
 
 
 <!--BibTex citation -->
-  <section class="section hero" id="BibTeX">
+  <!-- <section class="section hero" id="BibTeX">
     <div class="container  is-max-desktop">
       <h2 class="title is-size-2 has-text-centered">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
